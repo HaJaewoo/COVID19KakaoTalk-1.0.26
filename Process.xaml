@@ -133,7 +133,7 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
     <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="570.4,233.6" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="SEND_MESSAGE" DisplayName="Sequence &gt; 지정된 문구로 메일 보내기 " sap:VirtualizedContainerService.HintSize="1051.2,5836" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence x:Key="SEND_MESSAGE" DisplayName="Sequence &gt; 지정된 문구로 메일 보내기 " sap:VirtualizedContainerService.HintSize="1051.2,5457.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="Friends" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -151,15 +151,15 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1009.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1010,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
           <ui:CommentOut.Body>
-            <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="524.8,394.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="526,391" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Tag&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Tag&quot;) IsNot Nothing]" DisplayName="If &gt; 일부직원 선택시 , 재전송시 " sap:VirtualizedContainerService.HintSize="483.2,301.6" sap2010:WorkflowViewState.IdRef="If_2">
+              <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Tag&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Tag&quot;) IsNot Nothing]" DisplayName="If &gt; 일부직원 선택시 , 재전송시 " sap:VirtualizedContainerService.HintSize="484,299" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Then>
                   <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
@@ -187,7 +187,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="1009.6,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New" QueueName="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Result="[Remains]" />
+        <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="1010,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New" QueueName="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Result="[Remains]" />
         <If Condition="[Remains IsNot Nothing]" sap:VirtualizedContainerService.HintSize="1010,208" sap2010:WorkflowViewState.IdRef="If_9">
           <If.Then>
             <ui:DeleteQueueItems TimeoutMS="{x:Null}" DisplayName="Delete Queue Items" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DeleteQueueItems_1" QueueItems="[Remains]" />
@@ -558,14 +558,14 @@
         </Sequence>
       </Sequence>
       <x:Null x:Key="READ_MESSAGE" />
-      <Sequence x:Key="CHECK_RESPONSE" sap:VirtualizedContainerService.HintSize="376,571.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence x:Key="CHECK_RESPONSE" sap:VirtualizedContainerService.HintSize="376,568" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[string.Format(&quot;응답을 체크하기 위해서 {0}에 접속합니다.&quot;, in_Config(&quot;SurveySite&quot;).ToString)]" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Forms\CheckReponse.xaml">
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[string.Format(&quot;응답을 체크하기 위해서 {0}에 접속합니다.&quot;, in_Config(&quot;SurveySite&quot;).ToString)]" />
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Forms\CheckReponse.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
@@ -583,7 +583,7 @@
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
-      <Sequence x:Key="RESEND_MESSAGE" DisplayName="Sequence &gt; 재전송 케이스 " sap:VirtualizedContainerService.HintSize="1051.2,2020" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence x:Key="RESEND_MESSAGE" DisplayName="Sequence &gt; 재전송 케이스 " sap:VirtualizedContainerService.HintSize="1052,2017" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="CustMsg" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -599,8 +599,8 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1009.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;미응답한 직원에게 메세지를 재전송 합니다.&quot;]" />
-        <ui:ReadRange AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; 주소록 읽어 오기 " sap:VirtualizedContainerService.HintSize="1009.6,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="A1" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1010,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;미응답한 직원에게 메세지를 재전송 합니다.&quot;]" />
+        <ui:ReadRange AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; 주소록 읽어 오기 " sap:VirtualizedContainerService.HintSize="1010,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="A1" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
         <ui:OutputDataTable DataTable="[AddrDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1010,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[str_AddrDT]" />
         <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1010,229" sap2010:WorkflowViewState.IdRef="CommentOut_5">
           <ui:CommentOut.Body>
